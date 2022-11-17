@@ -22,8 +22,8 @@ from torch.utils.data import DataLoader, random_split
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
-dir_img = 'G:/Data/RatPose/all/'  # data file
-dir_label = 'G:/Data/RatPose/label/RatPoseLabels/RatPoseAll_indoor_trainval.csv'   # label file(csv)
+dir_img = ''  # data file
+dir_label = ''   # label file(csv)
 dir_checkpoint = './TrainedModel/'
 num_points = 6
 
@@ -51,7 +51,7 @@ def get_args():
     parser.add_argument('-v', '--validation', dest='val', type=float, default=10.0,
                         help='Percent of the data that is used as validation (0-100)')
     parser.add_argument('-p', '--path_backbone', dest='path_backbone', type=str,  # default=None,
-                        default='D:/Codes_related/Backbone/pytorch/Resnet/resnet50-19c8e357.pth',
+                        default='./Resnet/resnet50-19c8e357.pth',
                         help='the path of backbone')
     return parser.parse_args()
 
