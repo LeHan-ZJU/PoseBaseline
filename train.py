@@ -153,10 +153,6 @@ if __name__ == '__main__':
     args = get_args()
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logging.info(f'Using device {device}')
-    print(args.path_backbone)
-    print('input_size:', resize_w, resize_h, ';  Augment:', args.augment)
-    print('lr:', args.lr, ';  batch_size:', args.batchsize, ';  the weight of similar loss:', args.weight)
-    print('trainset:', dir_label)
 
     # 构建网络
     net = Net_Resnet(args.path_backbone, extract_list, device, train=True, n_channels=3, nof_joints=num_points)
