@@ -1,6 +1,9 @@
 # PoseBaseline
 ## introduction
-This is the pytorch implementation of 2D pose estimation model. The model mainly consists of resnet50 and three up-sampling modules. The output of the model is a set of heatmaps of c*(w/4)*(h/4), where c is the number of keypoints, and w and h are the dimensions of the input images.
+This is the pytorch implementation of 2D pose estimation model. 
+
+The model mainly consists of resnet50 and three up-sampling modules. 
+The output of the model is a set of heatmaps of c*(w/4)*(h/4), where c is the number of keypoints, and w and h are the dimensions of the input images.
 
 ## Structure
 ```
