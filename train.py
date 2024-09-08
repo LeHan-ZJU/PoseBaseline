@@ -63,7 +63,7 @@ def train_net(net,
               val_percent=0.1,
               save_cp=True,
               img_scale=1
-              ):   # scale是输入与输出的边长比
+              ):  
 
     dataset = DatasetPoseCSV(resize_w, resize_h, dir_img, dir_label, img_scale, num_points)
     n_val = int(len(dataset) * val_percent)
@@ -86,7 +86,7 @@ def train_net(net,
     ''')
 
     optimizer = optim.Adam(net.parameters(), lr, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')  # if net.n_classes > 1 else 'max', patience=2)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')  
 
     criterion = nn.MSELoss()
 
@@ -104,7 +104,7 @@ def train_net(net,
                     'the images are loaded correctly.'
 
                 imgs = imgs.to(device=device, dtype=torch.float32)
-                heatmap_type = torch.float32  # if net.n_classes == 1 else torch.long
+                heatmap_type = torch.float32  
                 true_heatmaps = true_heatmaps.to(device=device, dtype=heatmap_type)
 
                 heatmaps_pred = net(imgs)
